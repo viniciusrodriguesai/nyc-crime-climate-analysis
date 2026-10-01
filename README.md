@@ -7,49 +7,49 @@ An interactive, comprehensive Jupyter-based project exploring the relationship b
 
 ## 🚀 Table of Contents
 
-1. [Project Overview](#project-overview)  
-2. [Key Features](#key-features)  
-3. [Tech Stack](#tech-stack)  
-4. [Repository Structure](#repository-structure)  
-5. [Installation & Setup](#installation--setup)  
-6. [Data Sources](#data-sources)  
-7. [Usage](#usage)  
-8. [Utilities](#utilities)  
-9. [Contributing](#contributing)  
-10. [License](#license)  
+1. [Project Overview](#project-overview)
+2. [Key Features](#key-features)
+3. [Tech Stack](#tech-stack)
+4. [Repository Structure](#repository-structure)
+5. [Installation & Setup](#installation--setup)
+6. [Data Sources](#data-sources)
+7. [Usage](#usage)
+8. [Utilities](#utilities)
+9. [Contributing](#contributing)
+10. [License](#license)
 11. [Contact](#contact)
 
 ---
 
 ## 📝 Project Overview
 
-This analysis investigates how climate factors—such as temperature and precipitation—affect crime frequency and distribution in New York City. By merging NYPD crime data with NOAA weather records and visualizing with interactive tools, this project delivers insights for data-driven public safety decisions.
+This analysis investigates how climate factors—such as temperature and precipitation—are associated with recorded complaint frequency and distribution in New York City. By merging NYPD crime data with NOAA weather records and visualizing with interactive tools, this project explores descriptive patterns; it does not establish causal effects or validate public-safety interventions.
 
-**Research Questions:**  
-- How does average daily temperature correlate with total crime count?  
-- Does precipitation influence specific crime types?  
+**Research Questions:**
+- How does average daily temperature correlate with total crime count?
+- Does precipitation influence specific crime types?
 - Which NYC boroughs and seasons exhibit the highest crime hotspots?
 
 ---
 
 ## ✨ Key Features
 
-- **Temporal Analysis:** Interactive Plotly charts showing daily, weekly, and seasonal crime trends.  
-- **Spatial Analysis:** Folium choropleth maps and heatmaps to highlight crime density across boroughs.  
-- **Correlation Metrics:** Pearson correlation coefficients between crime counts and weather variables.  
-- **Dynamic Dashboard:** Date range, season, and offense-type filters via ipywidgets.  
+- **Temporal Analysis:** Interactive Plotly charts showing daily, weekly, and seasonal crime trends.
+- **Spatial Analysis:** Folium choropleth maps and heatmaps to highlight crime density across boroughs.
+- **Correlation Metrics:** Pearson correlation coefficients between crime counts and weather variables.
+- **Dynamic Dashboard:** Date range, season, and offense-type filters via ipywidgets.
 - **End-to-End Workflow:** Organized Jupyter notebooks from ingestion to final report.
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Python 3.8+**  
-- **Jupyter Notebook / JupyterLab**  
-- **Pandas**, **NumPy**, **GeoPandas**  
-- **Plotly Express**  
-- **Folium**  
-- **SciPy** (statistical analysis)  
+- **Python 3.8+**
+- **Jupyter Notebook / JupyterLab**
+- **Pandas**, **NumPy**, **GeoPandas**
+- **Plotly Express**
+- **Folium**
+- **SciPy** (statistical analysis)
 - **ipywidgets** (interactive controls)
 
 ---
@@ -181,3 +181,13 @@ This project is licensed under the [MIT License](LICENSE).
 
 Questions or feedback? Feel free to reach out!
 
+
+## Portfolio validation
+
+The audit recomputed the daily temperature association from the tracked 2024 raw snapshot: 565,118 complaint rows, 366 matched days, Pearson r = 0.5803. Run:
+
+```bash
+python scripts/validate_daily_correlation.py
+```
+
+See [aggregate evidence](reports/correlation_2024.json). The final report corrects its conflicting 0.12 value and removes unsupported policing recommendations. The nominal p-value does not account for seasonality or temporal dependence. Only this aggregate computation was rerun; the complete map/dashboard workflow was not validated.

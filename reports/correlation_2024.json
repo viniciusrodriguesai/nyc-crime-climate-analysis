@@ -1,0 +1,15 @@
+{
+  "source": "tracked raw CSV snapshot",
+  "year": 2024,
+  "raw_crime_rows": 565118,
+  "valid_crime_rows_in_2024": 565118,
+  "matched_days": 366,
+  "pearson_r": 0.5803088964244735,
+  "naive_independent_observations_p_value": 2.508323303064845e-34,
+  "limitations": [
+    "Complaint rows are counted; this is not a measure of all actual crime.",
+    "Temperature is the midpoint of daily maximum/minimum, not a measured daily mean.",
+    "The nominal p-value assumes independent observations and does not adjust for seasonality or temporal autocorrelation.",
+    "This is descriptive correlation; no causal or policing recommendation follows."
+  ]
+}
